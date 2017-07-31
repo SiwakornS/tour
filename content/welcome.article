@@ -68,12 +68,11 @@ https://golang.org
 
 #appengine: * Go offline
 #appengine: 
-#appengine: การเดินทางนี้ยังสามารถทำงานได้แม้ว่าจะไม่มีอินเตอร์เนท
+#appengine: การเดินทางนี้ยังสามารถทำงานได้แม้ว่าจะไม่มีอินเตอร์เน็ต
 #appengine: 
 #appengine: และมันยังทำงานเร็วกว่าด้วย เพราะมันรันโค้ดบนเครื่องของคุณเอง
 #appengine: 
 #appengine: หากคุณต้องการแบบนั้น
-#appengine: To run the tour locally first
 #appengine: [[http://golang.org/dl/][ดาวน์โหลดและติดตั้งภาษาโก]]
 #appengine: จากนั้น เริ่มต้นการเดินทางด้วยคำสั่ง:
 #appengine: 
