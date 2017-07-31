@@ -23,7 +23,7 @@ https://golang.org
 
 การเดินทางนี้มีการตอบสนองผ่านทางหน้าจอ ลองคลิกที่ปุ่ม
 [[javascript:highlightAndClick("#run")][Run]] ตอนนี้เลย
-(or type `shift-enter`) เพื่อทำการคอมไพล์และรันโปรแกรม
+(หรือกดปุ่ม `shift-enter`) เพื่อทำการคอมไพล์และรันโปรแกรม
 #appengine: บนรีโมทเซิร์ฟเวอร์
 บทเครื่องของคุณ
 และผลลัพธ์จะถูกส่งมาแสดงผลที่ด้านล่าง
@@ -34,7 +34,7 @@ https://golang.org
 
 ลองด้วยการแก้ไขโปรแกรมนี้แล้วรันดูอีกทีสิ
 
-โปรดจำไว้ว่า เมื่อคุณคลิกที่ปุ่ม [[javascript:highlightAndClick("#format")][Format]] หรือ `ctrl-enter`
+โปรดจำไว้ว่า เมื่อคุณคลิกที่ปุ่ม [[javascript:highlightAndClick("#format")][Format]] หรือกด `ctrl-enter`
 ตัวหนังสือในกล่องข้อความจะถูกจัดรูปแบบด้วยเครื่องมือที่ชื่อว่า
 [[https://golang.org/cmd/gofmt/][gofmt]] และคุณสามารถเลือกให้แสดงสีตามไวยากรณ์ของภาษาหรือไม่ก็ได้
 ด้วยการคลิกที่ปุ่ม [[javascript:highlightAndClick(".syntax-checkbox")][syntax]] 
