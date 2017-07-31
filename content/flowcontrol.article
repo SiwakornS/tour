@@ -6,88 +6,79 @@ https://golang.org
 
 * For
 
-Go has only one looping construct, the `for` loop.
+ภาษาโกมีวิธีวนลูปแบบเดียวคือ `for`
 
-The basic `for` loop has three components separated by semicolons:
+การใช้ `for` แบบพื้นฐานคือใส่ค่าส่วนประกอบสามค่าลงไป แบ่งวรรคแต่ละค่าด้วย เซมิโคลอน:
 
-- the init statement: executed before the first iteration
-- the condition expression: evaluated before every iteration
-- the post statement: executed at the end of every iteration
+- ส่วนกำหนดค่าเริ่มต้น: ถูกทำก่อนเริ่มวนรอบแรก
+- ส่วนกำหนดเงื่อนไข: จะถูกคำนวณก่อนจะเริ่มทุกๆรอบ
+- ส่วนที่ทำทีหลัง: จะถูกทำทุกครั้งหลังจบแต่ละรอบ
 
-The init statement will often be a short variable declaration, and the
-variables declared there are visible only in the scope of the `for`
-statement.
+ขั้นตอนของ ส่วนกำหนดค่าเริ่มต้น ส่วนมากจะเป็นการประกาศตัวแปรแบบย่อ
+และตัวแปรที่ถูกประกาศจะใช้ได้แค่ในขอบเขตของ `for` นี้เท่านั้น
 
-The loop will stop iterating once the boolean condition evaluates to `false`.
+ลูปจะหยุดเมื่อค่านิพจน์จาก ส่วนกำหนดเงื่อนไข ถูกคำนวณว่าได้ค่า `false`
 
-_Note_: Unlike other languages like C, Java, or JavaScript there are no parentheses
-surrounding the three components of the `for` statement and the braces `{`}` are
-always required.
+_โปรดจำไว้ว่า_: สิ่งที่ต่างจากภาษาอื่นๆอย่าง ภาษาซี, จาวา หรือ จาวาสคริป ก็คือมันไม่มีวงเล็บ
+ครอบค่าส่วนประกอบสามค่าของ `for` และวงเล็บปีกกา `{`}` จะต้องมีเสมอ
 
 .play flowcontrol/for.go
 
-* For continued
+* For (ต่อ)
 
-The init and post statement are optional.
+ส่วนของการ กำหนดค่าเริ่มต้น และ ส่วนที่ทำทีหลัง นั้นจะมีหรือไม่มีก็ได้
 
 .play flowcontrol/for-continued.go
 
-* For is Go's "while"
+* For คือ "while" ในภาษาโก
 
-At that point you can drop the semicolons: C's `while` is spelled `for` in Go.
+ไม่ยากเลย แค่เอาเซมิโคลอนออกไป หรือจะพูดง่ายๆคือ `while` ของภาษาซี สะกดว่า `for` ในภาษาโกก็ได้
 
 .play flowcontrol/for-is-gos-while.go
 
-* Forever
+* ทำซ้ำแบบอนันต์
 
-If you omit the loop condition it loops forever, so an infinite loop is compactly expressed.
+ถ้าคุณละการกำหนดเงื่อนไข มันจะกลายเป็นทำซ้ำไปเรื่อยๆ และมันดูกระทัดรัดมาก
 
 .play flowcontrol/forever.go
 
 * If
 
-Go's `if` statements are like its `for` loops; the expression need not be
-surrounded by parentheses `(`)` but the braces `{`}` are required.
+`if` ในภาษาโก ก็คล้ายกับ `for` ลูป ที่ไม่ต้องมีวงเล็บครอบ `(`)` แต่ปีกกาต้องมีเสมอ `{`}`
 
 .play flowcontrol/if.go
 
-* If with a short statement
+* If แบบย่อ
 
-Like `for`, the `if` statement can start with a short statement to execute before the condition.
+เช่นเดียวกับ `for` การประกาศ `if` สามารถเริ่มด้วยคำสั่งบางอย่างก่อนที่จะถามเงื่อนไข
 
-Variables declared by the statement are only in scope until the end of the `if`.
+ตัวแปรที่ประกาศภายในนี้ก็จะใช้ได้ภายในขอบเขตของ `if` นี้เท่านั้น
 
-(Try using `v` in the last `return` statement.)
+(ทดลองเอา `v` ไปไว้ในส่วนของ `return` ที่ตอบจบของฟังก์ชั่นแทนดู)
 
 .play flowcontrol/if-with-a-short-statement.go
 
-* If and else
+* If และ else
 
-Variables declared inside an `if` short statement are also available inside any
-of the `else` blocks.
+ตัวแปรที่ประกาศไว้สั้นๆภายใน `if` ยังสามารถใช้ได้ในส่วนของ `else` ทั้งหมดได้ด้วย
 
-(Both calls to `pow` are executed and return before the call to `fmt.Println`
-in `main` begins.)
+(ในฟังก์ชั่น `main` ทั้งสองบรรทัดเรียกใช้ฟังก์ชั่น `pow` และคืนค่ามาก่อนที่จะเรียกฟังก์ชั่น `fmt.Println` ต่อ)
 
 .play flowcontrol/if-and-else.go
 
-* Exercise: Loops and Functions
+* แบบฝึกหัด: ลูป และ ฟังก์ชั่น
 
-As a way to play with functions and loops, implement the square root function using Newton's method.
+วิธีง่ายๆที่จะเล่นกับฟังก์ชั่นและลูป คือการสร้างฟังก์ชั่นหาค่า รากที่สอง โดยใช้ วิธีของนิวตัน
 
-Newton's method is to approximate `Sqrt(x)` by picking a starting point _z_ first, and repeating:
+ในกรณีนี้ วิธีของนิวตัน คือการหาค่าที่ใกล้เคียง `Sqrt(x)` แล้วเลือกค่าเริ่มต้นมาค่าหนึ่ง สมมุติว่าเป็น _z_ แล้วทำซ้ำไปเรื่อยๆ:
 
 .image /content/img/newton.png
 
-Hint: Iterate and return the final value of _z_ as the answer:
+เบื้องต้นให้ทำซ้ำ 10 ครั้งแล้วดูว่าค่าไหนที่ใกล้เคียงกับคำตอบมากที่สุดในบรรดาค่าที่ (1, 2, 3, ...)
 
-	z -= (z*z - x) / (2*z)
+จากนั้น เปลี่ยนเงื่อนไขในการหยุด ให้หยุดเมื่อค่าที่ได้ไม่มีการเปลี่ยนแปลงอีกต่อไป (หรือเปลี่ยนแปลงน้อยมาก) ให้ดูว่ามันทำซ้ำมากหรือน้อยรอบ กว่าที่คำตอบจะใกล้เคียงกับที่ได้จาก [[https://golang.org/pkg/math/#Sqrt][math.Sqrt]]?
 
-To begin with, repeat the calculation 10 times and see how close you get to the answer for various values (1, 2, 3, ...).
-
-Next, change the loop condition to stop once the value has stopped changing (or only changes by a very small amount). See if that's more or fewer than 10 iterations. How close are you to the [[https://golang.org/pkg/math/#Sqrt][math.Sqrt]]?
-
-Hint: To declare and initialize a floating point value, give it floating point syntax or use a conversion:
+คำแนะนำ: สร้างตัวแปรและกำหนดค่าเบื้องต้นด้วยเลขทศนิยม หรือใช้การแปลงค่าแบบนี้:
 
 	z := float64(1)
 	z := 1.0
@@ -96,61 +87,59 @@ Hint: To declare and initialize a floating point value, give it floating point s
 
 * Switch
 
-You probably knew what `switch` was going to look like.
+คุณอาจจะรู้อยู่แล้วว่า `switch` เป็นอย่างไร
 
-A case body breaks automatically, unless it ends with a `fallthrough` statement.
+ทุกๆส่วนของเงื่อนไข จะหยุดทำโดยอัตโนมัติ เว้นแต่ว่าจะใส่คำเฉพาะ `fallthrough` ไปที่ตอนจบของส่วนนั้นๆ
 
 .play flowcontrol/switch.go
 
-* Switch evaluation order
+* Switch ทำตามลำดับ
 
-Switch cases evaluate cases from top to bottom, stopping when a case succeeds.
+Switch จะค้นหาเงื่อนไขแต่ละส่วนจากบนลงล่าง และจะหยุดเมื่อส่วนใดส่วนหนึ่งทำสำเร็จ
 
-(For example,
+(ตัวอย่างเช่น,
 
 	switch i {
 	case 0:
 	case f():
 	}
 
-does not call `f` if `i==0`.)
+ฟังก์ชั่น `f` จะไม่ถูกเรียกใช้เลย ถ้า `i==0` เป็นจริง)
 
-#appengine: *Note:* Time in the Go playground always appears to start at
-#appengine: 2009-11-10 23:00:00 UTC, a value whose significance is left as an
-#appengine: exercise for the reader.
+#appengine: *โปรดจำไว้ว่า:* เวลาใน playground ของภาษาโกจะเริ่มต้นที่
+#appengine: 2009-11-10 23:00:00 UTC เสมอ ซึ่งเป็นค่าที่กำหนดไว้สำหรับ
+#appengine: ให้ผู้อ่านใช้ทำแบบฝึกหัด
 
 .play flowcontrol/switch-evaluation-order.go
 
-* Switch with no condition
+* Switch แบบไม่มีเงื่อนไข
 
-Switch without a condition is the same as `switch`true`.
+Switch แบบไม่มีเงื่อนไขก็เหมือนกับ `switch`true`
 
-This construct can be a clean way to write long if-then-else chains.
+รูปแบบนี้เหมาะจะใช้แทนการมี if-then-else ต่อกันหลายๆทอด
 
 .play flowcontrol/switch-with-no-condition.go
 
 * Defer
 
-A defer statement defers the execution of a function until the surrounding
-function returns.
+คำสั่ง defer จะหน่วงการเรียกใช้ฟังก์ชั่นที่ระบุไว้ จนกว่าฟังก์ชั่นที่ครอบมันอยู่ทำงานเสร็จสิ้นจนกระทั้งคืนค่าแล้ว
 
-The deferred call's arguments are evaluated immediately, but the function call
-is not executed until the surrounding function returns.
+อาร์กิวเมนต์ของฟังก์ชั่นที่ถูกหน่วงไว้ จะถูกประเมิณค่าทันที เพียงแต่ตัวฟังก์ชั่นจะยังไม่ถูกเรียกจนกว่าฟังก์ชั่นที่ครอบมันอยู่จะคืนค่าออกไปก่อน
 
 .play flowcontrol/defer.go
 
-* Stacking defers
+* การ defer เป็นชั้นๆ
 
-Deferred function calls are pushed onto a stack. When a function returns, its
-deferred calls are executed in last-in-first-out order.
+ฟังก์ชั่นที่ถูกหน่วงจะถูกใส่ลงไปกองซ้อนกันไว้ก่อนเป็นชั้นๆ และเมื่อใดที่ฟังก์ชั่นที่ครอบมันอยู่ คืนค่ากลับ
+บรรดาฟังก์ชั่นที่ถูกหน่วงไว้จะถูกหยิบมาเรียกทีละตัวแบบ last-in-first-out คือตัวสุดท้ายจะถูกทำก่อนนั่นเอง
 
-To learn more about defer statements read this
-[[https://blog.golang.org/defer-panic-and-recover][blog post]].
+หากต้องการรู้เกี่ยวกับ defer เพิ่มเติม ให้อ่านที่นี่
+[[https://blog.golang.org/defer-panic-and-recover][blog post]]
 
 .play flowcontrol/defer-multi.go
 
-* Congratulations!
+* ยินดีด้วย!
 
-You finished this lesson!
+คุณได้จบบทนี้แล้ว!
 
-You can go back to the list of [[/list][modules]] to find what to learn next, or continue with the [[javascript:click('.next-page')][next lesson]].
+คุณสามารถย้อนกลับไปดูรายการทั้งหมดของ [[/list][modules]] เพื่อดูว่าจะเรียนอะไรต่อไป หรือไปต่อที่ [[javascript:click('.next-page')][บทต่อไป]]
