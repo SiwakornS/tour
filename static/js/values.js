@@ -49,7 +49,7 @@ value('translation', {
     'submit-feedback': 'Send feedback about this page',
 
     // GitHub issue template: update repo and messaging when translating.
-    'github-repo': 'github.com/golang/tour',
+    'github-repo': 'github.com/devygo/tour',
     'issue-title': 'tour: [REPLACE WITH SHORT DESCRIPTION]',
     'issue-message': 'Change the title above to describe your issue and add your feedback here, including code if necessary',
     'context': 'Context',
@@ -67,22 +67,22 @@ value('ui.config', {
         tabSize: 4,
         lineWrapping: true,
         extraKeys: {
-            'Shift-Enter': function() {
+            'Shift-Enter': function () {
                 $('#run').click();
             },
-            'Ctrl-Enter': function() {
+            'Ctrl-Enter': function () {
                 $('#format').click();
             },
-            'PageDown': function() {
+            'PageDown': function () {
                 return false;
             },
-            'PageUp': function() {
+            'PageUp': function () {
                 return false;
             },
         },
         // TODO: is there a better way to do this?
         // AngularJS values can't depend on factories.
-        onChange: function() {
+        onChange: function () {
             if (window.codeChanged !== null) window.codeChanged();
         }
     }
